@@ -1,5 +1,5 @@
 cp ../../target/openvidu-server-"$1".jar ./openvidu-server.jar
 
-docker build -t openvidu/openvidu-server-kms .
+docker build -t nerdsandcompany/openvidu-server-kms .
 
 rm ./openvidu-server.jar

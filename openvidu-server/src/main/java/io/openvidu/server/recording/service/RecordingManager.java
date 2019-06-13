@@ -99,7 +99,7 @@ public class RecordingManager {
 			Runtime.getRuntime().availableProcessors());
 
 	static final String RECORDING_ENTITY_FILE = ".recording.";
-	public static final String IMAGE_NAME = "openvidu/openvidu-recording";
+	public static final String IMAGE_NAME = "nerdsandcompany/openvidu-recording";
 	static String IMAGE_TAG;
 
 	private static final List<EndReason> LAST_PARTICIPANT_LEFT_REASONS = Arrays
@@ -114,7 +114,7 @@ public class RecordingManager {
 		this.composedRecordingService = new ComposedRecordingService(this, openviduConfig);
 		this.singleStreamRecordingService = new SingleStreamRecordingService(this, openviduConfig);
 
-		log.info("Recording module required: Downloading openvidu/openvidu-recording:"
+		log.info("Recording module required: Downloading nerdsandcompany/openvidu-recording:"
 				+ openviduConfig.getOpenViduRecordingVersion() + " Docker image (350MB aprox)");
 
 		this.checkRecordingRequirements(this.openviduConfig.getOpenViduRecordingPath(),
@@ -151,7 +151,7 @@ public class RecordingManager {
 			log.info("Docker image available");
 		}
 
-		// Clean any stranded openvidu/openvidu-recording container on startup
+		// Clean any stranded nerdsandcompany/openvidu-recording container on startup
 		dockerManager.cleanStrandedContainers(RecordingManager.IMAGE_NAME);
 	}
 

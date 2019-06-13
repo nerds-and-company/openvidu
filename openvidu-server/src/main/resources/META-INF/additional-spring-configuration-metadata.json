@@ -57,7 +57,7 @@
 		{
 			"name": "openvidu.recording.version",
 			"type": "java.lang.String",
-			"description": "Tag for openvidu/openvidu-recording Docker image"
+			"description": "Tag for nerdsandcompany/openvidu-recording Docker image"
 		},
 		{
 			"name": "openvidu.recording.autostop-timeout",

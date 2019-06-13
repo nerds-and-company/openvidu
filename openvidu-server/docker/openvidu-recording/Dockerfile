@@ -25,4 +25,7 @@ RUN ["chmod", "+x", "/entrypoint.sh"]
 RUN mkdir /recordings
 RUN chmod 777 /recordings
 
+COPY default.pa .
+RUN cp -f default.pa /etc/pulse/default.pa
+
 ENTRYPOINT /entrypoint.sh

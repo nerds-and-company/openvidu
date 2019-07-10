@@ -161,14 +161,18 @@ public class ComposedRecordingService extends RecordingService {
 			final String containerName = "recording_" + recording.getId();
 			Volume volume1 = new Volume("/recordings");
 			Volume volume2 = new Volume("/dev/shm");
+			Volume volume3 = new Volume("/etc/pulse");
 			List<Volume> volumes = new ArrayList<>();
 			volumes.add(volume1);
 			volumes.add(volume2);
+			volumes.add(volume3);
 			Bind bind1 = new Bind(openviduConfig.getOpenViduRecordingPath(), volume1);
 			Bind bind2 = new Bind("/dev/shm", volume2);
+			Bind bind3 = new Bind("/root/pulseconfig", volume3);
 			List<Bind> binds = new ArrayList<>();
 			binds.add(bind1);
 			binds.add(bind2);
+			binds.add(bind3);
 			containerId = dockerManager.runContainer(container, containerName, volumes, binds, null, "host", envs);
 			containers.put(containerId, containerName);
 		} catch (Exception e) {

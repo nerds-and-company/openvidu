@@ -52,7 +52,7 @@ public class RecordingProperties {
 		public RecordingProperties build() {
 			if (OutputMode.COMPOSED.equals(this.outputMode)) {
 				this.recordingLayout = this.recordingLayout != null ? this.recordingLayout : RecordingLayout.BEST_FIT;
-				this.resolution = this.resolution != null ? this.resolution : "1920x1080";
+				this.resolution = this.resolution != null ? this.resolution : "854x480";
 				if (RecordingLayout.CUSTOM.equals(this.recordingLayout)) {
 					this.customLayout = this.customLayout != null ? this.customLayout : "";
 				}
@@ -173,7 +173,7 @@ public class RecordingProperties {
 	 * single archive in a grid layout or {@link Recording.OutputMode#INDIVIDUAL}
 	 * for one archive for each stream.<br>
 	 * <br>
-	 * 
+	 *
 	 * Default to {@link Recording.OutputMode#COMPOSED}
 	 */
 	public Recording.OutputMode outputMode() {
@@ -186,7 +186,7 @@ public class RecordingProperties {
 	 * {@link io.openvidu.java.client.RecordingProperties.Builder#outputMode(Recording.OutputMode)}
 	 * has been called with value {@link Recording.OutputMode#COMPOSED}.<br>
 	 * <br>
-	 * 
+	 *
 	 * Default to {@link RecordingLayout#BEST_FIT}
 	 */
 	public RecordingLayout recordingLayout() {
@@ -215,8 +215,8 @@ public class RecordingProperties {
 	 * individual video files will have the native resolution of the published
 	 * stream.<br>
 	 * <br>
-	 * 
-	 * Default to "1920x1080"
+	 *
+	 * Default to "854x480"
 	 */
 	public String resolution() {
 		return this.resolution;
@@ -226,7 +226,7 @@ public class RecordingProperties {
 	 * Defines whether to record audio or not. Cannot be set to false at the same
 	 * time as {@link hasVideo()}.<br>
 	 * <br>
-	 * 
+	 *
 	 * Default to true
 	 */
 	public boolean hasAudio() {
@@ -237,7 +237,7 @@ public class RecordingProperties {
 	 * Defines whether to record video or not. Cannot be set to false at the same
 	 * time as {@link hasAudio()}.<br>
 	 * <br>
-	 * 
+	 *
 	 * Default to true
 	 */
 	public boolean hasVideo() {

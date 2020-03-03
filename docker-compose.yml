@@ -1,0 +1,8 @@
+version: "3"
+
+services:
+  build:
+    build: .
+    command: ./build
+    volumes:
+      - .:/app

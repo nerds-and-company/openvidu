@@ -1,0 +1,14 @@
+#!/bin/bash
+set -e
+
+mvn -DskipTests=true compile && mvn -DskipTests=true clean install
+
+cd openvidu-server
+
+mvn clean compile package
+
+cd target
+
+cp openvidu-server-2.11.0.jar ../../openvidu-server-2.11.0.jar
+
+echo "Build finished: openvidu-server-2.11.0.jar"

@@ -168,7 +168,7 @@ public class ComposedRecordingService extends RecordingService {
 			volumes.add(volume3);
 			Bind bind1 = new Bind(openviduConfig.getOpenViduRecordingPath(), volume1);
 			Bind bind2 = new Bind("/dev/shm", volume2);
-			Bind bind3 = new Bind("/root/pulseconfig", volume3);
+			Bind bind3 = new Bind("/app/server_files/pulseconfig", volume3);
 			List<Bind> binds = new ArrayList<>();
 			binds.add(bind1);
 			binds.add(bind2);

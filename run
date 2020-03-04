@@ -1,0 +1,10 @@
+#!/bin/bash
+set -e
+
+service redis-server start
+
+service coturn start
+
+service kurento-media-server start
+
+java -jar -Dserver.ssl.key-store=/root/$KEYSTORE_NAME.jks -Dserver.ssl.key-store-password=$KEYSTORE_PASSWORD -Dserver.ssl.key-alias=$KEYSTORE_ALIAS -Dopenvidu.secret=$SECRET -Dopenvidu.publicurl=https://$PUBLIC_HOSTNAME:4443/ -Dopenvidu.recording=true -Dopenvidu.recording.path=/root/recordings -Dopenvidu.recording.autostop-timeout=30 -Dspring.profiles.active=docker openvidu-server-2.11.0.jar

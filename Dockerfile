@@ -4,4 +4,6 @@ WORKDIR /app
 
 COPY . .
 
-RUN ./build
+RUN apt-get update
+
+RUN apt-get install -y openjdk-8-jdk maven

@@ -1,6 +1,8 @@
 #!/bin/bash
 set -e
 
+apt-get update
+
 apt-get install -y openjdk-8-jdk maven
 
 mvn -DskipTests=true compile && mvn -DskipTests=true clean install
@@ -11,4 +13,4 @@ mvn clean compile package
 
 cd target
 
-cp openvidu-server-2.11.0.jar ../../openvidu-server-2.11.0.jar
+cp openvidu-server-2.11.0.jar ../../server_files/openvidu-server-2.11.0.jar

@@ -1,0 +1,6 @@
+#!/bin/bash
+set -e
+
+openssl pkcs12 -export -password pass:$KEYSTORE_PASSWORD -name $KEYSTORE_ALIAS -in /etc/letsencrypt/live/$PUBLIC_HOSTNAME/fullchain.pem -inkey /etc/letsencrypt/live/$PUBLIC_HOSTNAME/privkey.pem -out p12keystore.p12
+
+keytool -importkeystore -srckeystore p12keystore.p12 -srcstoretype pkcs12 -srcstorepass $KEYSTORE_PASSWORD -deststoretype pkcs12 -deststorepass $KEYSTORE_PASSWORD -alias $KEYSTORE_ALIAS -destkeystore $KEYSTORE_NAME.jks

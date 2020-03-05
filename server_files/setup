@@ -1,0 +1,18 @@
+#!/bin/bash
+set -e
+
+apt-get update
+
+apt-get install -y certbot
+
+./install_kurento
+
+./install_docker
+
+./generate_certificate
+
+cp config_files/WebRtcEndpoint.conf.ini /etc/kurento/modules/kurento/WebRtcEndpoint.conf.ini
+
+cp config_files/turnserver.conf /etc/turnserver.conf
+
+cp config_files/coturn /etc/default/coturn
